@@ -1,18 +1,23 @@
 package models;
 
 // valor, nome do filme e informar se é dublado ou legendado
-public class Ingresso {
-    private double valorDoIngresso;
+abstract class Ingresso {
+    protected double valorDoIngresso;
     private String nomeDoFilme;
     private boolean isDublado;
 
+    public Ingresso(double valorDoIngresso, String nomeDoFilme, boolean isDublado) {
+        this.valorDoIngresso = valorDoIngresso;
+        this.nomeDoFilme = nomeDoFilme;
+        this.isDublado = isDublado;
+    }
+
     public double getValorDoIngresso() {
+        setValorDoIngresso(valorDoIngresso);
         return valorDoIngresso;
     }
 
-    public void setValorDoIngresso(double valorDoIngresso) {
-        this.valorDoIngresso = valorDoIngresso;
-    }
+    abstract void setValorDoIngresso(double valorDoIngresso);
 
     public String getNomeDoFilme() {
         return nomeDoFilme;
